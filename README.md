@@ -4,6 +4,11 @@
 
 LiveReload when running `webpack --watch`
 
+## Modification
+
+`webpack-livereload-plugin` plugin always sends all assets to `tiny-lr` plugin to trigger a reload.<br />
+This fork only sends modified files to it.
+
 ## Installation
 
 Install the package

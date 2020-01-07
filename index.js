@@ -22,6 +22,7 @@ function LiveReloadPlugin(options) {
   this.protocol = this.options.protocol ? this.options.protocol + ':' : '';
   this.hostname = this.options.hostname || '" + location.hostname + "';
   this.server = null;
+  this.chunkVersions = {};
 }
 
 function arraysEqual(a1, a2){
@@ -78,8 +79,17 @@ LiveReloadPlugin.prototype.start = function start(watching, cb) {
 LiveReloadPlugin.prototype.done = function done(stats) {
   var hash = stats.compilation.hash;
   var childHashes = (stats.compilation.children || []).map(child => child.hash);
-  var files = Object.keys(stats.compilation.assets);
-  var include = files.filter(function(file) {
+  var changedChunks = stats.compilation.chunks.filter(function(chunk) {
+    var oldVersion = this.chunkVersions[chunk.name];
+    this.chunkVersions[chunk.name] = chunk.hash;
+
+    return chunk.hash !== oldVersion;
+  }.bind(this));
+
+  var changedChunkFiles = changedChunks.reduce(function(acc, chunk) {
+    return acc.concat(chunk.files)
+  }, []);
+  var include = changedChunkFiles.filter(function(file) {
     return !file.match(this.ignore);
   }, this);
 
