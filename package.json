@@ -1,5 +1,5 @@
 {
-  "name": "webpack-livereload-plugin",
+  "name": "webpack-livereload-changed-chunks-plugin",
   "version": "2.2.0",
   "description": "Livereload for webpack",
   "main": "index.js",
@@ -8,18 +8,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/statianzo/webpack-livereload-plugin.git"
+    "url": "git+https://github.com/carwale/webpack-livereload-plugin.git"
   },
   "keywords": [
     "webpack",
     "livereload"
   ],
-  "author": "Jason Staten",
+  "author": "Jason Staten, CarWale Team",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/statianzo/webpack-livereload-plugin/issues"
+    "url": "https://github.com/carwale/webpack-livereload-plugin/issues"
   },
-  "homepage": "https://github.com/statianzo/webpack-livereload-plugin#readme",
+  "homepage": "https://github.com/carwale/webpack-livereload-plugin#readme",
   "devDependencies": {
     "faucet": "0.0.1",
     "tape": "^4.9.1"

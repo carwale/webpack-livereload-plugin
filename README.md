@@ -1,7 +1,5 @@
 # webpack-livereload-plugin
 
-[![Build Status](https://travis-ci.org/statianzo/webpack-livereload-plugin.svg?branch=master)](https://travis-ci.org/statianzo/webpack-livereload-plugin)
-
 LiveReload when running `webpack --watch`
 
 ## Modification
@@ -15,10 +13,10 @@ Install the package
 
 ```sh
 # for webpack 4
-npm install --save-dev webpack-livereload-plugin
+npm install --save-dev webpack-livereload-changed-chunks-plugin
 
 # for webpack 3
-npm install --save-dev webpack-livereload-plugin@1
+npm install --save-dev webpack-livereload-changed-chunks-plugin@1
 ```
 
 Add the plugin to your webpack config
@@ -26,7 +24,7 @@ Add the plugin to your webpack config
 ```js
 // webpack.config.js
 
-var LiveReloadPlugin = require('webpack-livereload-plugin');
+var LiveReloadPlugin = require('webpack-livereload-changed-chunks-plugin');
 
 module.exports = {
   plugins: [
