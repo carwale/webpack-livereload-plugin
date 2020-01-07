@@ -1,6 +1,6 @@
 {
   "name": "webpack-livereload-changed-chunks-plugin",
-  "version": "2.2.0",
+  "version": "3.0.0",
   "description": "Livereload for webpack",
   "main": "index.js",
   "scripts": {
